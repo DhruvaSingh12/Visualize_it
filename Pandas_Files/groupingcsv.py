@@ -8,6 +8,7 @@ grouped = df.groupby(['measure_id', 'measure_name'])
 output_dir = 'output_csv_files'
 os.makedirs(output_dir, exist_ok=True)
 
+//creating new csv files based on measure_name field
 for (measure_id, measure_name), group in grouped:
     valid_filename = "".join(c if c.isalnum() or c in " _-" else "_" for c in measure_name)
     file_name = f"{valid_filename}.csv"
